@@ -1,0 +1,11 @@
+<ul>
+  <% @posfiles.each do |posfile| %>
+      <li><%= posfile.key %></li>
+  <% end %>
+</ul>
+
+<h2>Upload a new File:</h2>
+<%= form_tag upload_path, :method => "post", :multipart => true do %>
+    <%= file_field_tag "posfile" %>
+    <%= submit_tag "Upload" %>
+<% end %>
